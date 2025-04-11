@@ -13,7 +13,7 @@ public class Main {
         double interestrate = scanner.nextDouble() /100;
 
         System.out.println("Enter number of years: ");
-        int years = scanner.nextByte();
+        int years = scanner.nextInt();
 
         int dayperyear = 365;
         double dailyrate = interestrate / dayperyear;
