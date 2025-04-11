@@ -25,7 +25,8 @@ public class Main {
         System.out.println("Future Value: " + currency.format(futurevalue));
         System.out.println("Total interest Earned: " + currency.format(totaldays));
 
-
+        if (interestrate < 4);
+        System.out.println("The average rate of a CD is 4.25%\nI would recommend looking online for better rates.");
 
         }
 
