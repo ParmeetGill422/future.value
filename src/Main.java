@@ -1,15 +1,32 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-public class Main {
-    public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+import java.text.NumberFormat;
+import java.util.Scanner;
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
+public class Main {
+    public static void main(String[]args){
+        NumberFormat currency = NumberFormat.getCurrencyInstance();
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Enter deposit amount($):");
+        double principal = scanner.nextDouble();
+
+        System.out.println("Enter interest rate (e.g. 7.25%:");
+        double interestrate = scanner.nextDouble() /100;
+
+        System.out.println("Enter number of years: ");
+        int years = scanner.nextByte();
+
+        int dayperyear = 365;
+        double dailyrate = interestrate / dayperyear;
+        int totaldays = dayperyear * years;
+
+        double futurevalue = principal * Math.pow(1 + dailyrate, totaldays);
+        double totalinterest = futurevalue - principal;
+
+        System.out.println("Future Value: " + currency.format(futurevalue));
+        System.out.println("Total interest Earned: " + currency.format(totaldays));
+
+
+
         }
+
     }
-}
